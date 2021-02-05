@@ -44,6 +44,7 @@ export default {
             time{
                 font-size: 90%;
             }
+            
         }
     }
 </style>

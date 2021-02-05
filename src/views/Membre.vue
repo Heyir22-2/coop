@@ -55,6 +55,7 @@ export default {
                 api.get('channels/'+conversation.id+'/posts').then(response => {
                     response.data.forEach(message => {
                         if(message.member_id == this.membre.id) {
+                            message.conversation = conversation;
                             this.messages.push(message)
                         }
                     })

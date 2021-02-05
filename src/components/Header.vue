@@ -1,14 +1,14 @@
 <template>
     <header class="header">
-  <input class="menu-btn" type="checkbox" id="menu-btn" />
-  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-  <ul class="menu">
-    <li><a href="/">Conversations</a></li>
-    <li><a href="/coop">Coop</a></li>
-    <li><a href="/membres">Membres</a></li>
-    <li><button @click="seDeconnecter">Se Déconnecter</button></li>
-  </ul>
-  </header>
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+      <ul class="menu">
+        <li><a href="/">Conversations</a></li>
+        <li><a href="/coop">Coop</a></li>
+        <li><a href="/membres">Membres</a></li>
+        <li><button @click="seDeconnecter">Se Déconnecter</button></li>
+      </ul>
+    </header>
 </template>
 
 <style>
