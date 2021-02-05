@@ -1,5 +1,5 @@
 <template>
-    <header class="header">
+    <header class="header" v-if="$store.state.token">
       <input class="menu-btn" type="checkbox" id="menu-btn" />
       <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
       <ul class="menu">
