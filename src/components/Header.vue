@@ -26,7 +26,6 @@ a {
 .header {
   background-color: #fff;
   box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
-  position: fixed;
   width: 100%;
   z-index: 3;
 }
@@ -48,7 +47,7 @@ a {
 
 .header li a:hover,
 .header .menu-btn:hover {
-  background-color: #f4f4f4;
+  background-color: #ba70f7;
 }
 
 .header .logo {
@@ -144,11 +143,15 @@ a {
   }
   .header .menu {
     clear: none;
-    float: right;
     max-height: none;
   }
   .header .menu-icon {
     display: none;
+  }
+  .header .menu li:nth-child(4)
+  {
+    float: right;
+    margin-top: 1em
   }
 }
 
