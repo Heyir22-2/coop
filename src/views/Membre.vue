@@ -1,6 +1,7 @@
 <template>
     <div class="container" v-if="membre">
         <div><router-link to="/membres">Membres</router-link> > {{membre.fullname}}</div>
+        <img class="avatarFull" :src="avatar"/>
         <h1>{{membre.fullname}}</h1>
         <ul>
             <li>Email: {{membre.email}}</li>
@@ -30,6 +31,10 @@ export default {
         }
     },
     computed: {
+        avatar() {
+            var md5 = require('md5');
+            return 'https://gravatar.com/avatar/'+md5(this.membre.email)+'?s=400&d=identicon&r=pg'
+        },
         messagesTries() {
             function compare(a, b) {
                 if(a.created_at < b.created_at) {
@@ -69,3 +74,10 @@ export default {
     }
 }
 </script>
+<style lang="scss" scoped>
+    .avatarFull{
+        float: left;
+        width: 10em;
+        margin-right: 0.3em;
+    }
+</style>

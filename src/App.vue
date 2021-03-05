@@ -83,9 +83,6 @@ export default {
     }
   }
 }
-.router-link-exact-active{
-  background: red;
-}
 .container{
   margin-top: 2em;
 }

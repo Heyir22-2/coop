@@ -1,8 +1,9 @@
 <template>
     <div class="message">
+        <img class="avatar" :src="avatar"/>
         <header>
             <div>
-                <b>{{membre.fullname}}</b> <time> le {{dateMessage}}</time>
+                <router-link :to="{name:'Membre',params:{membre_id:membre.id}}" title="Profil"><b>{{membre.fullname}}</b></router-link> <time> le {{dateMessage}}</time>
             </div>
             <div class="conversation" v-if="message.conversation">
                 Message posté dans <b><router-link :to="{name:'Conversation',params:{id:message.conversation.id}}">{{message.conversation.topic}}</router-link></b>
@@ -15,6 +16,10 @@
 export default {
     props: ['message'],
     computed : {
+        avatar() {
+            var md5 = require('md5');
+            return 'https://gravatar.com/avatar/'+md5(this.membre.email)+'?s=400&d=identicon&r=pg'
+        },
         membre() {
             return this.$store.getters.getMembre(this.message.member_id);
         },
@@ -45,6 +50,11 @@ export default {
                 font-size: 90%;
             }
             
+        }
+        .avatar{
+            float: left;
+            width: 2em;
+            margin-right: 0.3em;
         }
     }
 </style>

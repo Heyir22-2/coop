@@ -3,12 +3,10 @@
         <h1>{{conversation.topic}}</h1>
         <h3>{{conversation.label}}</h3>
         <div class="messages">
-          <template v-for="message in messages">
-            <blockquote>
-              {{message.message}}
-            </blockquote>
-          </template>
-        </div>
+        <template v-for="message in messages">
+            <Message :message="message"></Message>
+        </template>
+    </div>
         <div ref="bottom">
           <form @submit.prevent="posterMessage">
             <div class="row">
@@ -25,7 +23,9 @@
 </template>
 
 <script>
+import Message from '@/components/Message.vue'
   export default {
+    components:{Message},
     data() {
       return {
         conversation:false,
