@@ -1,6 +1,7 @@
 <template>
     <div class="row">
-        <div class="column column-75"><h3>{{conversation.topic}}</h3> {{conversation.label}}</div>
+        <div class="column column-75"><h3>{{conversation.topic}}</h3> {{conversation.label}}
+        </div>
         <div class="column column-25 actions">
             <router-link :to="{name:'Conversation', params:{id : conversation.id}}" class="button">Voir</router-link>
             </div>
@@ -8,7 +9,12 @@
 </template>
 <script>
 export default {
-    props : ['conversation']
+    props : ['conversation'],
+    // computed: {
+    //     membre() {
+    //         return this.$store.getters.getMembre(this.conversation.member_id);
+    //     },
+    // }
 }
 </script>
 <style scoped lang="scss">

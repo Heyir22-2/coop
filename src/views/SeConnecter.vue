@@ -1,5 +1,6 @@
 <template>
 <div class="container">
+    <h1>Projet Coop 2021</h1>
     <h1>Se Connecter</h1>
     <form @submit.prevent="connexion">
     <fieldset>
@@ -38,7 +39,7 @@ export default {
             {
                 this.$store.commit('setMembre',response.data.member);
                 this.$store.commit('setToken',response.data.token);
-                
+                this.$bus.$emit('charger-conversations');
                 this.$router.push('/');
             }).catch(error=>
             {

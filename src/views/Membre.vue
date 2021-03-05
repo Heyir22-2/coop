@@ -78,6 +78,7 @@ export default {
     .avatarFull{
         float: left;
         width: 10em;
+        height: 10em;
         margin-right: 0.3em;
     }
 </style>
